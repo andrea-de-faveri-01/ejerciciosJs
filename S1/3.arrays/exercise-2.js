@@ -1,8 +1,8 @@
 const cars = ["Saab", "Volvo", "BMW"];
-const carsNew = 0;
+//const carsNew = 0;
 
+//cars[carsNew] = "Ford";
 
+cars[0] = "Ford";
 
-cars[carsNew] = "Ford";
-
-console.log(cars)
+console.log(cars);
