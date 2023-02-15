@@ -5,25 +5,19 @@ const streamers = [
   { name: "AuronPlay", age: 33, gameMorePlayed: "Among Us" },
 ];
 
-//function streamerLegendsOld(streamer) {
-//  if (streamer.gameMorePlayed.includes("Legends")) {
-//    return streamer;
-//  } else if (streamer.age > 35) {
-//    const mayusc = streamer.gameMorePlayed.toUpperCase()
-//  return  mayusc
-//} 
-//}
-function streamerLegends(streamer) {
-    return streamer.gameMorePlayed.includes("Legends") 
-}
-function streamersOld(streamer) {
-if (streamer.age > 35){
-    return streamer.gameMorePlayed.toUpperCase()
-}
-}
+const filteredStreamers = streamers.filter((streamer) =>
+  streamer.gameMorePlayed.includes("League of Legends")
+);
 
-let steamersLegends = streamers.filter(streamerLegends);
-let streamersLegendsOld = streamers.filter(streamerOld)
+const modifiedStreamers = filteredStreamers.map((streamer) => {
+  if (streamer.age > 35) {
+    return {
+      name: streamer.name,
+      age: streamer.age,
+      gameMorePlayed: streamer.gameMorePlayed.toUpperCase(),
+    };
+  }
+  return streamer;
+});
 
-console.log(streamersLegendsOld);
-
+console.log(modifiedStreamers);
